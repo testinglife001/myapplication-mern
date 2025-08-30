@@ -1,0 +1,41 @@
+{
+  "name": "myapplication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix frontend",
+    "start": "node server.js",
+    "client-build": "npm run build --prefix frontend",
+    "dev": "concurrently \" npm run server \" \" npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-and-time": "^3.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "formidable": "^3.5.2",
+    "googleapis": "^159.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4",
+    "nodemailer": "^7.0.5",
+    "shortid": "^2.2.17",
+    "slugify": "^1.4.5",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}

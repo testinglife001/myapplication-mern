@@ -1,0 +1,35 @@
+
+
+# Node modules
+/node_modules
+/frontend/node_modules
+
+# Environment variables
+.env
+
+# Secret or config files
+credentials.js
+read-me.txt
+*.secret.js
+*.config.js
+*.key
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+/dist
+/build
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
