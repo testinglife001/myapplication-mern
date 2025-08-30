@@ -9,10 +9,8 @@ const path = require('path');
 const userModel = require('../models/userModel');
 const nodeMailer = require('nodemailer');
 const crypto = require("crypto");
-// const sendMail = require("../utils/sendMail.js");
 // const fs = require('fs');
 const dotenv = require('dotenv');
-const sendMail = require('../utils/sendEmail');
 dotenv.config(); // ✅ load env first
 
 module.exports.admin_login = async (req, res) => {
@@ -168,24 +166,6 @@ module.exports.user_register = async (req, res) => {
                     .json({ successMessage: "OTP sent. Please verify your email." });
                 });
 
-                // Generate token (save this in DB with expiry)
-                // const token = crypto.randomBytes(32).toString("hex");
-                // const verificationLink = `http://localhost:5173/verify-email?token=${token}&id=${userId}`;
-                // const verificationLink = `http://localhost:5173/verify-email?otp=${otp}`;
-
-                // Send email
-                /*await sendMail(
-                email,
-                "Verify your email",
-                `
-                    <h3>Welcome to My App!</h3>
-                    <p>Please verify your email by clicking below:</p>
-                    <a href="${verificationLink}">${verificationLink}</a>
-                    <p>This link will expire in 1 hour.</p>
-                `
-                );
-
-                return res.status(201).json({ successMessage: "OTP sent. Please verify your email." });*/
 
             } catch (error) {
             console.error("Register error:", error);
