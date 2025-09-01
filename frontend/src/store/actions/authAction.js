@@ -56,6 +56,7 @@ export const register = (data) => async (dispatch) => {
 }
 
 export const user_register = (data) => async (dispatch) => {
+
     dispatch({ type: 'LOADER_RUN' });
 
     try {
@@ -81,8 +82,8 @@ export const user_register = (data) => async (dispatch) => {
 export const verify_email = (data, history) => async (dispatch) => {
     dispatch({ type: "LOADER_RUN" });
     console.log(data)
-    console.log(history)
-;
+    console.log(history);
+    
     try {
         const response = await axios.post("/rest-api/verify-email", data, { withCredentials: true })
 
@@ -98,7 +99,7 @@ export const verify_email = (data, history) => async (dispatch) => {
         });
 
         // redirect after success
-        history.push("/");
+        // history.push("/");
     } catch (error) {
         dispatch({
             type: "REGISTER_ERROR",

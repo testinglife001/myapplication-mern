@@ -68,6 +68,10 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
+    image_url: {
+        type: String,
+        required: false
+    },
     like: {
         type: Number,
         default: 0

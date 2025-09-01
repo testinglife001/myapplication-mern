@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import toast, {Toaster} from 'react-hot-toast';
 import { register, user_register } from '../../store/actions/authAction';
+import axios from "axios";
 
 const Register = ({ history }) => {
 
@@ -44,10 +45,25 @@ const Register = ({ history }) => {
       }  
     }
 
+    const upload = async (file) => {
+      const data = new FormData();
+      data.append("file", file);
+      data.append("upload_preset", "myapplication");
+
+      try {
+        const res = await axios.post("https://api.cloudinary.com/v1_1/dvnxusfy8/image/upload", data);
+        const { url } = res.data;
+        return url;
+      } catch (err) {
+        console.log(err);
+      }
+    } 
+
     // console.log(showImage);
 
-    const userRegister = (e) => {
+    const userRegister =  (e) => {
         e.preventDefault();
+        const url = upload(file)
         const formData = new FormData();
         formData.append('name', state.name);
         formData.append('email', state.email);

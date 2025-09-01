@@ -12,6 +12,11 @@ import ProtectRoute from './components/auth/ProtectRoute';
 import Dashboard from './components/dashboard/Dashboard';
 import VerifyEmail from './components/auth/VerifyEmail';
 import HomeAlt from './components/home/HomeAlt';
+import TaskManager from './components/taskManager/TaskManager';
+import Tasks from './components/taskManager/Tasks';
+import Users from './components/taskManager/Users';
+import Trash from './components/taskManager/Trash';
+import TaskDetails from './components/taskManager/TaskDetails';
 
 function App() {
   const [state,setState] = useState();
@@ -122,6 +127,27 @@ function App() {
         
         <Route path="/dashboard/comments/:currentPage?" 
           component={Dashboard} exact />
+        
+        <Route path="/task-manager" 
+          component={TaskManager} exact />
+        <Route path="/tasks" 
+          component={Tasks} exact />
+        <Route path="/completed/:status" 
+          component={Tasks} exact />
+        <Route path="/in-progress/:status" 
+          component={Tasks} exact />
+        <Route path="/todo/:status" 
+          component={Tasks} exact />
+         
+        <Route path="/create-task" 
+          component={Tasks} exact /> 
+        
+        <Route path="/team" 
+          component={Users} exact />
+        <Route path="/trashed" 
+          component={Trash} exact />
+        <Route path="/task/:id" 
+          component={TaskDetails} exact />
 
       </Switch>
       </Router>
