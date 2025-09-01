@@ -45,20 +45,6 @@ const Register = ({ history }) => {
       }  
     }
 
-    const upload = async (file) => {
-      const data = new FormData();
-      data.append("file", file);
-      data.append("upload_preset", "myapplication");
-
-      try {
-        const res = await axios.post("https://api.cloudinary.com/v1_1/dvnxusfy8/image/upload", data);
-        const { url } = res.data;
-        return url;
-      } catch (err) {
-        console.log(err);
-      }
-    } 
-
     // console.log(showImage);
 
     const userRegister =  (e) => {
