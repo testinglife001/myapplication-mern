@@ -12,8 +12,16 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/rest-api/(.*)",
       "dest": "server.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/dist/assets/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/frontend/dist/favicon.ico"
     },
     {
       "src": "/(.*)",
